@@ -24,7 +24,7 @@ dnslookup(char *address){
 	hints.ai_family = PF_UNSPEC;
 	hints.ai_socktype = SOCK_STREAM;
 
-	char ip_address[INET6_ADDRSTRLEN];
+	char ipaddress[INET6_ADDRSTRLEN];
 
 	if((i = getaddrinfo(address,"80",&hints,&ai0)) != 0){
 		printf("Unable to look up IP address : %s\n", gai_strerror(i));
@@ -34,14 +34,15 @@ dnslookup(char *address){
 	for(ai = ai0; ai != NULL; ai=ai->ai_next){
 
 		if(ai->ai_family == AF_INET){
-			inet_ntop(AF_INET,&((struct sockaddr_in*)ai->ai_addr)->sin_addr,ip_address,sizeof(ip_address));
-			printf("%s IPV4 %s\n", address, ip_address);
+			inet_ntop(AF_INET,&((struct sockaddr_in*)ai->ai_addr)->sin_addr,ipaddress,sizeof(ipaddress));
+			printf("%s IPV4 %s\n", address, ipaddress);
 			break;
 
 		}
 		if(ai->ai_family == AF_INET6){
-			inet_ntop(AF_INET6,&((struct sockaddr_in*)ai->ai_addr)->sin_addr,ip_address,sizeof(ip_address));
-			printf("%s IPV6 %s\n", address, ip_address);
+			inet_ntop(AF_INET6,&((struct sockaddr_in*)ai->ai_addr)->sin_addr,ipaddress,sizeof(ipaddress));
+			printf("%s IPV6 %s\n", address, ipaddress);
+			break;
 		}	
 		else{
 			printf("address error: address not ipv4 or ipv6\n");

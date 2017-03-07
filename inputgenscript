@@ -1,0 +1,26 @@
+#!/bin/bash
+#input generation for traceroute analysis
+
+
+#ipv4
+
+{
+traceroute -4 -q 1 -n www.google.com
+traceroute -4 -q 1 -n weibo.cn
+traceroute -4 -q 1 -n www.facebook.com
+traceroute -4 -q 1 -n ebay.co.uk
+traceroute -4 -q 1 -n allegro.pl
+traceroute -4 -q 1 -n www.google.co.jp
+} > outputv4.txt
+
+
+#ipv6
+
+{
+traceroute -6 -q 1 -n www.google.com
+traceroute -6 -q 1 -n weibo.cn
+traceroute -6 -q 1 -n www.facebook.com
+traceroute -6 -q 1 -n www.ebay.co.uk
+traceroute -6 -q 1 -n www.allegro.pl
+traceroute -6 -q 1 -n www.google.co.jp
+} > outputv6.txt

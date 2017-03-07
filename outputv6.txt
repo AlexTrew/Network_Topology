@@ -1,0 +1,1 @@
+traceroute to www.google.com (2a00:1450:4009:813::2004), 30 hops max, 80 byte packetstraceroute to www.facebook.com (2a03:2880:f129:83:face:b00c:0:25de), 30 hops max, 80 byte packetstraceroute to www.google.co.jp (2a00:1450:4009:80f::2003), 30 hops max, 80 byte packets

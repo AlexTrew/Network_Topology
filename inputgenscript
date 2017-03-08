@@ -5,22 +5,20 @@
 #ipv4
 
 {
-traceroute -4 -q 1 -n www.google.com
-traceroute -4 -q 1 -n weibo.cn
-traceroute -4 -q 1 -n www.facebook.com
-traceroute -4 -q 1 -n ebay.co.uk
-traceroute -4 -q 1 -n allegro.pl
-traceroute -4 -q 1 -n www.google.co.jp
+traceroute -4 -q 1 -n 216.58.213.100 #google
+traceroute -4 -q 1 -n 31.13.65.36 #facebook
+traceroute -4 -q 1 -n 202.38.120.248 #chinese edu
+traceroute -4 -q 1 -n 216.218.186.2 #he.net
+traceroute -4 -q 1 -n 216.58.213.99 #google.co.jp
 } > outputv4.txt
 
 
 #ipv6
 
 {
-traceroute -6 -q 1 -n www.google.com
-traceroute -6 -q 1 -n weibo.cn
-traceroute -6 -q 1 -n www.facebook.com
-traceroute -6 -q 1 -n www.ebay.co.uk
-traceroute -6 -q 1 -n www.allegro.pl
-traceroute -6 -q 1 -n www.google.co.jp
+traceroute -6 -q 1 -n 2a00:1450:4009:80f::2004 #google
+traceroute -6 -q 1 -n 2a03:2880:f113:83:face:b00c:0:25de #facebook
+traceroute -6 -q 1 -n 2001:da8:1:100::80 #chinese edu
+traceroute -6 -q 1 -n 2001:470:0:76::2 #he.net
+traceroute -6 -q 1 -n 2a00:1450:4009:80f::2003 #google.co.jp
 } > outputv6.txt

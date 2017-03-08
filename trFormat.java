@@ -65,11 +65,13 @@ public class trFormat
 	
 	
 	private static void outf(LinkedList<String> data, String outfn){
-		outfn+=".txt";
+		//outfn+=".txt";
 		try{
 			PrintWriter writer = new PrintWriter(outfn,"UTF-8");
 			int c = 0;
 			String tuple = "'";
+			
+			writer.println("graph routeropology {");
 
 			for(String ip : ipdata){
 			
@@ -79,11 +81,13 @@ public class trFormat
 					tuple+="'";
 					tuple+="  -- '";
 					c++;
+					continue;
 				}
 				if(c==1){
 					tuple+=ip;
 					tuple+="'";
 					c++;
+					continue;
 				}
 	
 				else if(c ==2 ){
@@ -96,6 +100,7 @@ public class trFormat
 				
 						
 			}
+			writer.println("}");
 			writer.close();
 
 		}catch(IOException e){

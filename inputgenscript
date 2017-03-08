@@ -4,21 +4,28 @@
 
 #ipv4
 
-{
-traceroute -4 -q 1 -n 216.58.213.100 #google
-traceroute -4 -q 1 -n 31.13.65.36 #facebook
-traceroute -4 -q 1 -n 202.38.120.248 #chinese edu
-traceroute -4 -q 1 -n 216.218.186.2 #he.net
-traceroute -4 -q 1 -n 216.58.213.99 #google.co.jp
-} > outputv4.txt
+mkdir v4
+
+traceroute -4 -q 1 -n 216.58.213.100 > v4/googlev4.txt
+traceroute -4 -q 1 -n 31.13.65.36 > v4/facebookv4.txt
+traceroute -4 -q 1 -n 202.38.120.248 > v4/chineseeduv4.txt
+traceroute -4 -q 1 -n 216.218.186.2  > v4/hev4.txt
+traceroute -4 -q 1 -n 216.58.213.99  > v4/googlejapv4.txt
+
+java trFormat googlev4.txt router-tolopogy-v4-unsort.dot
+java trFormat facebookv4.txt router-tolopogy-v4-unsort.dot
+java trFormat chineseeduv4.txt router-tolopogy-v4-unsort.dot
+java trFormat hev4.txt router-tolopogy-v4-unsort.dot
+java trFormat googlejapv4.txt router-tolopogy-v4-unsort.dot
+
 
 
 #ipv6
+mkdir v6
 
-{
-traceroute -6 -q 1 -n 2a00:1450:4009:80f::2004 #google
-traceroute -6 -q 1 -n 2a03:2880:f113:83:face:b00c:0:25de #facebook
-traceroute -6 -q 1 -n 2001:da8:1:100::80 #chinese edu
-traceroute -6 -q 1 -n 2001:470:0:76::2 #he.net
-traceroute -6 -q 1 -n 2a00:1450:4009:80f::2003 #google.co.jp
-} > outputv6.txt
+traceroute -6 -q 1 -n 2a00:1450:4009:80f::2004 > googlev6.txt
+traceroute -6 -q 1 -n 2a03:2880:f113:83:face:b00c:0:25de > facebookv6.txt
+traceroute -6 -q 1 -n 2001:da8:1:100::80 > chineseeduv6.txt
+traceroute -6 -q 1 -n 2001:470:0:76::2 > hev6.txt
+traceroute -6 -q 1 -n 2a00:1450:4009:80f::2003 > googlejapv6.txt
+

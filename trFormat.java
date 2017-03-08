@@ -23,6 +23,7 @@ public class trFormat
 
 	private static void readFile(String fn){
 		try{
+
 			FileReader fr = new FileReader(fn);
 			BufferedReader br = new BufferedReader(fr);
 			
@@ -67,12 +68,14 @@ public class trFormat
 	private static void outf(LinkedList<String> data, String outfn){
 		//outfn+=".txt";
 		try{
-			PrintWriter writer = new PrintWriter(outfn,"UTF-8");
+			FileWriter fw = new FileWriter(outfn, true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			PrintWriter writer = new PrintWriter(bw);
 			int c = 0;
 			int q = 0;
 			String tuple = "'";
 			
-			writer.println("graph routeropology {");
+			
 
 			for(int i = 0; i < data.size();i++){
 			
@@ -113,7 +116,7 @@ public class trFormat
 				
 						
 			}
-			writer.println("}");
+			
 			writer.close();
 
 		}catch(IOException e){

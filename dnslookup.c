@@ -40,14 +40,16 @@ dnslookup(char *address){
 
 		}
 		if(ai->ai_family == AF_INET6){
-			inet_ntop(AF_INET6,&((struct sockaddr_in*)ai->ai_addr)->sin_addr,ipaddress,sizeof(ipaddress));
+			inet_ntop(AF_INET6,&((struct sockaddr_in6*)ai->ai_addr)->sin6_addr,ipaddress,sizeof(ipaddress));
 			printf("%s IPV6 %s\n", address, ipaddress);
-			break;
-		}	
+			continue;
+		}
+			
 		else{
 			printf("address error: address not ipv4 or ipv6\n");
 			break;
 		}
+		//continue;
 	}
 
 

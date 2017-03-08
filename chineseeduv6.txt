@@ -1,0 +1,1 @@
+traceroute to 2001:da8:1:100::80 (2001:da8:1:100::80), 30 hops max, 80 byte packets

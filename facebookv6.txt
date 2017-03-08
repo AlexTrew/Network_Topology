@@ -1,0 +1,1 @@
+traceroute to 2a03:2880:f113:83:face:b00c:0:25de (2a03:2880:f113:83:face:b00c:0:25de), 30 hops max, 80 byte packets

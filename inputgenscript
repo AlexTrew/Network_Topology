@@ -4,6 +4,8 @@
 
 #ipv4
 
+rm -r v4
+rm router-tolopogy-v4-unsort.dot
 mkdir v4
 
 traceroute -4 -q 1 -n 216.58.213.100 > v4/googlev4.txt
@@ -12,20 +14,31 @@ traceroute -4 -q 1 -n 202.38.120.248 > v4/chineseeduv4.txt
 traceroute -4 -q 1 -n 216.218.186.2  > v4/hev4.txt
 traceroute -4 -q 1 -n 216.58.213.99  > v4/googlejapv4.txt
 
-java trFormat googlev4.txt router-tolopogy-v4-unsort.dot
-java trFormat facebookv4.txt router-tolopogy-v4-unsort.dot
-java trFormat chineseeduv4.txt router-tolopogy-v4-unsort.dot
-java trFormat hev4.txt router-tolopogy-v4-unsort.dot
-java trFormat googlejapv4.txt router-tolopogy-v4-unsort.dot
+"graph routertopology " > routertopology
+java trFormat v4/googlev4.txt router-tolopogy-v4-unsort.dot
+java trFormat v4/facebookv4.txt router-tolopogy-v4-unsort.dot
+java trFormat v4/chineseeduv4.txt router-tolopogy-v4-unsort.dot
+java trFormat v4/hev4.txt router-tolopogy-v4-unsort.dot
+java trFormat v4/googlejapv4.txt router-tolopogy-v4-unsort.dot
 
-
+cat router-tolopogy-v4-unsort.dot | sort | uniq > router-tolopogy-v4.dot 
 
 #ipv6
+
+rm -r v6
+rm router-tolopogy-v6-unsort.dot
 mkdir v6
 
-traceroute -6 -q 1 -n 2a00:1450:4009:80f::2004 > googlev6.txt
-traceroute -6 -q 1 -n 2a03:2880:f113:83:face:b00c:0:25de > facebookv6.txt
-traceroute -6 -q 1 -n 2001:da8:1:100::80 > chineseeduv6.txt
-traceroute -6 -q 1 -n 2001:470:0:76::2 > hev6.txt
-traceroute -6 -q 1 -n 2a00:1450:4009:80f::2003 > googlejapv6.txt
+traceroute -6 -q 1 -n 2a00:1450:4009:80f::2004 > v6/googlev6.txt
+traceroute -6 -q 1 -n 2a03:2880:f113:83:face:b00c:0:25de > v6/facebookv6.txt
+traceroute -6 -q 1 -n 2001:da8:1:100::80 > v6/chineseeduv6.txt
+traceroute -6 -q 1 -n 2001:470:0:76::2 > v6/hev6.txt
+traceroute -6 -q 1 -n 2a00:1450:4009:80f::2003 > v6/googlejapv6.txt
 
+java trFormat v6/googlev6.txt router-tolopogy-v6-unsort.dot
+java trFormat v6/facebookv6.txt router-tolopogy-v6-unsort.dot
+java trFormat v6/chineseeduv6.txt router-tolopogy-v6-unsort.dot
+java trFormat v6/hev6.txt router-tolopogy-v6-unsort.dot
+java trFormat v6/googlejapv6.txt router-tolopogy-v6-unsort.dot
+
+cat router-tolopogy-v6-unsort.dot | sort | uniq > router-tolopogy-v6.dot 

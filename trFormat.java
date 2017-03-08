@@ -73,7 +73,7 @@ public class trFormat
 			PrintWriter writer = new PrintWriter(bw);
 			int c = 0;
 			int q = 0;
-			String tuple = "'";
+			String tuple = "";
 			
 			
 
@@ -82,8 +82,8 @@ public class trFormat
 				if(i == 0){
 				System.out.println("first");
 					tuple+=data.get(c);
-					tuple+="'";
-					tuple+="  -- '";
+					
+					tuple+="  -- ";
 					c++;
 					q++;
 					continue;
@@ -92,16 +92,13 @@ public class trFormat
 				if(q==0){
 				//System.out.println("first");
 					tuple+=data.get(c);
-					tuple+="'";
-					tuple+="  -- '";
+					tuple+="  -- ";
 					c++;
 					q++;
 					continue;
 				}
 				if(q==1){
 					tuple+=data.get(c);
-					tuple+="'";
-					//c++;
 					q++;
 					continue;
 				}
@@ -109,8 +106,8 @@ public class trFormat
 				else if(q ==2 ){
 					System.out.printf("%s added to file\n",tuple);
 					writer.println(tuple);
-					tuple="'";
 					q = 0;
+					tuple="";
 					
 				}
 				

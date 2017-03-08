@@ -1,0 +1,1 @@
+traceroute to 2a00:1450:4009:80f::2003 (2a00:1450:4009:80f::2003), 30 hops max, 80 byte packets

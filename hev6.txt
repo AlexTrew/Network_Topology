@@ -1,0 +1,1 @@
+traceroute to 2001:470:0:76::2 (2001:470:0:76::2), 30 hops max, 80 byte packets

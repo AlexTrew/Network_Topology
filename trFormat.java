@@ -69,32 +69,45 @@ public class trFormat
 		try{
 			PrintWriter writer = new PrintWriter(outfn,"UTF-8");
 			int c = 0;
+			int q = 0;
 			String tuple = "'";
 			
 			writer.println("graph routeropology {");
 
-			for(String ip : ipdata){
+			for(int i = 0; i < data.size();i++){
 			
-				if(c == 0){
+				if(i == 0){
 				System.out.println("first");
-					tuple+=ip;
+					tuple+=data.get(c);
 					tuple+="'";
 					tuple+="  -- '";
 					c++;
+					q++;
 					continue;
 				}
-				if(c==1){
-					tuple+=ip;
+
+				if(q==0){
+				//System.out.println("first");
+					tuple+=data.get(c);
 					tuple+="'";
+					tuple+="  -- '";
 					c++;
+					q++;
+					continue;
+				}
+				if(q==1){
+					tuple+=data.get(c);
+					tuple+="'";
+					//c++;
+					q++;
 					continue;
 				}
 	
-				else if(c ==2 ){
+				else if(q ==2 ){
 					System.out.printf("%s added to file\n",tuple);
 					writer.println(tuple);
 					tuple="'";
-					c = 0;
+					q = 0;
 					
 				}
 				
@@ -104,7 +117,7 @@ public class trFormat
 			writer.close();
 
 		}catch(IOException e){
-			System.out.println("its fukd m8");
+
 		}
 	
 

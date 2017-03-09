@@ -75,30 +75,32 @@ public class trFormat
 			int q = 0;
 			String tuple = "";
 			
-			
+			int i = 0;
 
-			for(int i = 0; i < data.size();i++){
-			
+			while(c < data.size()){
+
+				//System.out.println(data.get(i));
 				if(i == 0){
 				System.out.println("first");
-					tuple+=data.get(c);
+					tuple+=("\""+ data.get(c) +"\"");;
 					
 					tuple+="  -- ";
 					c++;
 					q++;
+					i++;
 					continue;
 				}
 
 				if(q==0){
 				//System.out.println("first");
-					tuple+=data.get(c);
+					tuple+=("\""+ data.get(c) +"\"");;
 					tuple+="  -- ";
 					c++;
 					q++;
 					continue;
 				}
 				if(q==1){
-					tuple+=data.get(c);
+					tuple+=("\""+ data.get(c) +"\"");
 					q++;
 					continue;
 				}

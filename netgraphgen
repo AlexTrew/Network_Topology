@@ -12,21 +12,21 @@ traceroute -4 -q 1 -n 216.58.213.100 > v4/googlev4.txt
 traceroute -4 -q 1 -n 31.13.65.36 > v4/facebookv4.txt
 traceroute -4 -q 1 -n 202.38.120.248 > v4/chineseeduv4.txt
 traceroute -4 -q 1 -n 216.218.186.2  > v4/hev4.txt
-traceroute -4 -q 1 -n 216.58.213.99  > v4/googlejapv4.txt
 traceroute -4 -q 1 -n 213.0.69.132   > v4/ipv6orgv4.txt
 traceroute -4 -q 1 -n 54.230.197.186   > v4/shaunnetv4.txt
 traceroute -4 -q 1 -n 148.122.252.1 > v4/morknov4.txt
 traceroute -4 -q 1 -n 52.17.57.215 > v4/netflixv4.txt
+traceroute -4 -q 1 -n 202.171.149.235 > v4/tochamanetv4.txt
 
 java trFormat v4/googlev4.txt router-topology-v4-unsort.dot
 java trFormat v4/facebookv4.txt router-topology-v4-unsort.dot
 java trFormat v4/chineseeduv4.txt router-topology-v4-unsort.dot
 java trFormat v4/hev4.txt router-topology-v4-unsort.dot
-java trFormat v4/googlejapv4.txt router-topology-v4-unsort.dot
 java trFormat v4/ipv6orgv4.txt router-topology-v4-unsort.dot
 java trFormat v4/shaunnetv4.txt router-topology-v4-unsort.dot
 java trFormat v4/morknov4.txt router-topology-v4-unsort.dot
 java trFormat v4/netflixv4.txt router-topology-v4-unsort.dot
+java trFormat v4/tochamanetv4.txt router-topology-v4-unsort.dot
 
 cat router-topology-v4-unsort.dot | sort | uniq > router-topology-v4.dot 
 
@@ -44,21 +44,21 @@ traceroute -6 -q 1 -n 2a00:1450:4009:80f::2004 > v6/googlev6.txt
 traceroute -6 -q 1 -n 2a03:2880:f113:83:face:b00c:0:25de > v6/facebookv6.txt
 traceroute -6 -q 1 -n 2001:da8:1:100::80 > v6/chineseeduv6.txt
 traceroute -6 -q 1 -n 2001:470:0:76::2 > v6/hev6.txt
-traceroute -6 -q 1 -n 2a00:1450:4009:80f::2003 > v6/googlejapv6.txt
 traceroute -6 -q 1 -n 2001:470:1f1d:275::7 > v6/ipv6orgv6.txt
 traceroute -6 -q 1 -n 2600:9000:2021:fc00:1:4e10:c80:93a1 > v6/shaunnetv6.txt
 traceroute -6 -q 1 -n 2001:4641::1 > v6/morknov6.txt
 traceroute -6 -q 1 -n 2a01:578:3::341e:3b51 > v6/netflixv6.txt
+traceroute -4 -q 1 -n 2001:e40:104::1 > v6/tochamanetv6.txt
 
 java trFormat v6/googlev6.txt router-topology-v6-unsort.dot
 java trFormat v6/facebookv6.txt router-topology-v6-unsort.dot
 java trFormat v6/chineseeduv6.txt router-topology-v6-unsort.dot
 java trFormat v6/hev6.txt router-topology-v6-unsort.dot
-java trFormat v6/googlejapv6.txt router-topology-v6-unsort.dot
 java trFormat v6/ipv6orgv6.txt router-topology-v6-unsort.dot
 java trFormat v6/shaunnetv6.txt router-topology-v6-unsort.dot
 java trFormat v6/morknov6.txt router-topology-v6-unsort.dot
-java trFormat v4/netflixv6.txt router-topology-v6-unsort.dot
+java trFormat v6/netflixv6.txt router-topology-v6-unsort.dot
+java trFormat v6/tochamanetv6.txt router-topology-v6-unsort.dot
 
 
 cat router-topology-v6-unsort.dot | sort | uniq > router-topology-v6.dot 
